@@ -35,7 +35,7 @@ function Login() {
 
 
         for (var i = 0; i < data.length; i++) {
-            if (data[i].id == uname && data[i].pssd == pssd) {
+            if (data[i].id === uname && data[i].pssd === pssd) {
                 setVerify(true);
                 break;
             }
@@ -47,10 +47,10 @@ function Login() {
             setOutput("Incorrect Credentials!")
 
     };
-    const clicked = (event) => {
-        event.preventDefault();
-        navigate('/test')
-    }
+    // const clicked = (event) => {
+    //     event.preventDefault();
+    //     navigate('/test')
+    // }
     const register1 = (event) => {
         event.preventDefault();
         navigate('/register')

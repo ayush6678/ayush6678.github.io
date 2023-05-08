@@ -55,7 +55,7 @@ function Map() {
 
     const increment = () => {
 
-        if (searchResults.length == 1) {
+        if (searchResults.length === 1) {
             setRow1(0);
         }
         else if ((row1) <= searchResults.length - 1)

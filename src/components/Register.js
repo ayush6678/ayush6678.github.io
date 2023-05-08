@@ -6,7 +6,8 @@ function Register() {
 
 
     const [inputs, setInputs] = useState({});
-
+    const [mssg,setmssg]=useState("");
+    
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;

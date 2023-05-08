@@ -10,7 +10,7 @@ import { Chart } from "react-google-charts";
 function Map() {
 
     //table data collection
-    var sarc;
+    const [sarc,setSarc]=useState("");
     const [searchResults, setSearchResults] = useState([]);
     const [row1, setRow1] = useState(0);
 
@@ -38,8 +38,13 @@ function Map() {
 
     if (searchResults.length > 0)
         console.log()
+
+    const changer=(event)=>{
+        setSarc(event.target.value);
+    }    
+
     const storeValue = () => {
-        sarc = document.getElementById("wow").value;
+        // sarc = document.getElementById("wow").value;
         handleSearch();
     }
 
@@ -126,7 +131,7 @@ function Map() {
                     <div className="search">
                         <div className="search_map">
                             <h1>Enter District Name:</h1>
-                            <input type="text" id="wow" />
+                            <input type="text" id="wow" onChange={changer}/>
                             <button type="button" onClick={storeValue}>Search</button><br /><br />
 
 

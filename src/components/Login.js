@@ -20,20 +20,21 @@ function Login() {
     const setPass = (event) => {
         setPssd(event.target.value);
         setOutput("");
+
+
     }
 
 
 
     const data = JsonData.filter(info => info)
 
-    console.log(data);
+
+    console.log(verify)
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-
-
+        
         for (var i = 0; i < data.length; i++) {
             if (data[i].id === uname && data[i].pssd === pssd) {
                 setVerify(true);

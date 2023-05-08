@@ -6,8 +6,8 @@ function Register() {
 
 
     const [inputs, setInputs] = useState({});
-    const [mssg,setmssg]=useState("");
-    
+    const [mssg,setMssg]=useState("");
+
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
@@ -18,6 +18,7 @@ function Register() {
         // if(inputs.psswd!=inputs.Cpsswd)
         // alert("Account has been created!")
         console.log(inputs);
+        setMssg("Verification Pending! Details will be sent vai Mail soon.")
     }
     return (
         <React.Fragment>
@@ -35,8 +36,7 @@ function Register() {
                     <div className="content17">
 
                         <h1>Registration</h1>
-
-
+                            <form>
                             <input type="text" name="username" value={inputs.username || ""} onChange={handleChange} placeholder="Name" required/><br />
                             <input type="text" name="email" value={inputs.email || ""} onChange={handleChange} placeholder="E-Mail" required/><br />
 
@@ -44,7 +44,9 @@ function Register() {
                             <input type="text" name="Cpsswd" value={inputs.Cpsswd || ""} onChange={handleChange} placeholder="Confirm-Password" required/><br />
 
                             <p2 id="output"></p2>
-                            <button type="button" onClick={clicked()}>SUBMIT</button>
+                            <button type="button" onClick={clicked}>SUBMIT</button>
+                            </form>
+                            <p>{mssg}</p>
 
                     </div>
 

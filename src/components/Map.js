@@ -63,7 +63,7 @@ function Map() {
         if (searchResults.length === 1) {
             setRow1(0);
         }
-        else if ((row1) <= searchResults.length - 1)
+        else if ((row1) < (searchResults.length-1))
             setRow1(row1 + 1);
 
         if (searchResults.length > 0 && row <= searchResults.length - 1)
@@ -138,10 +138,10 @@ function Map() {
 
 
 
-                            {/* <p>Connect with us to add more data: </p>
+                            <p>Connect with us to add more data: </p>
                             <form action="mailto:ayush.6678@gmail.com" method="post" enctype="text/plain">
                                 <button type="submit" style={{ background: "rgba(008, 190, 90, 0.798)" }}>Send Message</button>
-                            </form> */}
+                            </form>
                         </div>
 
                     </div>

@@ -1,5 +1,5 @@
 .login_view {
-    background-image: url("https://scontent.fdel29-1.fna.fbcdn.net/v/t1.6435-9/64600314_2544978728859963_4342166156199591936_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=e3f864&_nc_ohc=8nBnCB9Arz4AX-JQZ2d&_nc_ht=scontent.fdel29-1.fna&oh=00_AfCPJGU73WMn9QxyTkykQ7NTynxQtYA2CyupXs9Dnw48PQ&oe=647FCC4B");
+    background-image: url("https://scontent.fdel29-1.fna.fbcdn.net/v/t1.6435-9/64600314_2544978728859963_4342166156199591936_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=e3f864&_nc_ohc=EGEuUJ4vPSUAX8kFHiU&_nc_ht=scontent.fdel29-1.fna&oh=00_AfA8uJolS2lKivw-WmdEm-1Gqfhgy_Z1Is1DMqDZa_d5pA&oe=6531FF0B");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -8,11 +8,13 @@
     width: 100%;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 1fr 4fr auto;
+    grid-template-rows: 20% 40% 40%;
     grid-template-areas:
         'header'
         'content1'
         'footer';
+
+    overflow: hidden;
 }
 
 

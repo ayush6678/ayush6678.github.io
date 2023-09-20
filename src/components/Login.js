@@ -20,8 +20,6 @@ function Login() {
     const setPass = (event) => {
         setPssd(event.target.value);
         setOutput("");
-
-
     }
 
 
@@ -34,7 +32,7 @@ function Login() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        
+
         for (var i = 0; i < data.length; i++) {
             if (data[i].id === uname && data[i].pssd === pssd) {
                 setVerify(true);
@@ -48,54 +46,53 @@ function Login() {
             setOutput("Incorrect Credentials!")
 
     };
-    // const clicked = (event) => {
-    //     event.preventDefault();
-    //     navigate('/test')
-    // }
+
     const register1 = (event) => {
         event.preventDefault();
         navigate('/register')
     }
 
     return (
-        <React.Fragment>
-            <section>
-                <div className="login_view">
 
+        <div className="login_view">
+            <div className="header">
 
-                    <div className="header">
+                <img src="https://upload.wikimedia.org/wikipedia/en/4/4c/Official_Logo_of_IIT%28BHU%29%2CVaranasi%2CIndia%2C2013.png"
+                    height={'50px'} alt='IITBHU_logo'></img>
+                <h1>GEO-Map</h1>
+                <img src="https://www.iitbhu.ac.in/contents/iitbhu/img/other/emblem.jpg"
+                    height={'50px'} alt='IITBHU_logo'></img>
+            </div>
 
-                        <img src="https://upload.wikimedia.org/wikipedia/en/4/4c/Official_Logo_of_IIT%28BHU%29%2CVaranasi%2CIndia%2C2013.png"
-                            height={'50px'} alt='IITBHU_logo'></img>
-                        <h1>GEO-Map</h1>
-                        <img src="https://www.iitbhu.ac.in/contents/iitbhu/img/other/emblem.jpg"
-                            height={'50px'} alt='IITBHU_logo'></img>
-                    </div>
+            <div className="content1">
 
-                    <div className="content1">
-
-                        <h1>Login</h1>
-
-                        <form onSubmit={handleSubmit}>
-
-                            <input type="text" placeholder="User-name" value={uname} onChange={setUname} required></input><br />
-                            <input type="text" placeholder="Password" value={pssd} onChange={setPass} required></input><br />
-                            <p>{output}</p>
-                            <button type="submit">SUBMIT</button>
-
-
-                        </form>
-                    </div>
-
-                    <div className="footer">
-                        <p>Don't have an account? Click <button className="button-4" onClick={register1}> here </button> to Register!</p>
-                        {/* <button type="button" onClick={clicked}>GO to test</button> */}
-                    </div>
+                <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                    <h1>Login</h1>
+                    <button style={{
+                        backgroundColor: '#90EE90'}}
+                        
+                        onClick={()=>{navigate('/Map')}}>Skip Login</button>
 
                 </div>
-            </section>
 
-        </React.Fragment>
+
+                <form onSubmit={handleSubmit}>
+
+                    <input type="text" placeholder="User-name" value={uname} onChange={setUname} required></input><br />
+                    <input type="text" placeholder="Password" value={pssd} onChange={setPass} required></input><br />
+                    <p>{output}</p>
+                    <button type="submit">SUBMIT</button>
+
+
+                </form>
+            </div>
+
+            <div className="footer">
+                <p>Don't have an account? Click <button className="button-4" onClick={register1}> here </button> to Register!</p>
+                {/* <button type="button" onClick={clicked}>GO to test</button> */}
+            </div>
+
+        </div>
     );
 }
 

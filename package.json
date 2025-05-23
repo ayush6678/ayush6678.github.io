@@ -16,6 +16,7 @@
     "react-dom": "^18.2.0",
     "react-google-charts": "^4.0.0",
     "react-helmet": "^6.1.0",
+    "react-icons": "^4.10.1",
     "react-minimal-pie-chart": "^8.4.0",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
@@ -23,7 +24,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=12000 HOST=0.0.0.0 DANGEROUSLY_DISABLE_HOST_CHECK=true react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",

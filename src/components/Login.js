@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import "./Login.css";
 import JsonData from "./credentials.json";
 import { useNavigate } from "react-router-dom";
+import { FaUser, FaLock, FaSignInAlt, FaUserPlus, FaMapMarkedAlt } from 'react-icons/fa';
 
 function Login() {
-
     const [verify, setVerify] = useState(false);
     const [output, setOutput] = useState('');
-
-
     const [uname, setname] = useState('');
     const [pssd, setPssd] = useState('');
 
@@ -22,12 +20,7 @@ function Login() {
         setOutput("");
     }
 
-
-
-    const data = JsonData.filter(info => info)
-
-
-    console.log(verify)
+    const data = JsonData.filter(info => info);
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {
@@ -43,55 +36,80 @@ function Login() {
         if (verify)
             navigate('/Map');
         else
-            setOutput("Incorrect Credentials!")
-
+            setOutput("Incorrect Credentials!");
     };
 
     const register1 = (event) => {
         event.preventDefault();
-        navigate('/register')
+        navigate('/register');
     }
 
     return (
-
         <div className="login_view">
             <div className="header">
-
-                <img src="https://upload.wikimedia.org/wikipedia/en/4/4c/Official_Logo_of_IIT%28BHU%29%2CVaranasi%2CIndia%2C2013.png"
-                    height={'50px'} alt='IITBHU_logo'></img>
+                <img 
+                    src="https://upload.wikimedia.org/wikipedia/en/4/4c/Official_Logo_of_IIT%28BHU%29%2CVaranasi%2CIndia%2C2013.png"
+                    height={'50px'} 
+                    alt='IITBHU_logo'
+                />
                 <h1>GEO-Map</h1>
-                <img src="https://www.iitbhu.ac.in/contents/iitbhu/img/other/emblem.jpg"
-                    height={'50px'} alt='IITBHU_logo'></img>
+                <img 
+                    src="https://www.iitbhu.ac.in/contents/iitbhu/img/other/emblem.jpg"
+                    height={'50px'} 
+                    alt='IITBHU_logo'
+                />
             </div>
 
             <div className="content1">
-
-                <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                <div className="login-header">
                     <h1>Login</h1>
-                    <button style={{
-                        backgroundColor: '#90EE90'}}
-                        
-                        onClick={()=>{navigate('/Map')}}>Skip Login</button>
-
+                    <button 
+                        className="skip-button"
+                        onClick={() => {navigate('/Map')}}
+                    >
+                        <FaMapMarkedAlt /> Skip Login
+                    </button>
                 </div>
 
-
                 <form onSubmit={handleSubmit}>
-
-                    <input type="text" placeholder="User-name" value={uname} onChange={setUname} required></input><br />
-                    <input type="text" placeholder="Password" value={pssd} onChange={setPass} required></input><br />
-                    <p>{output}</p>
-                    <button type="submit">SUBMIT</button>
-
-
+                    <div className="input-group">
+                        <FaUser className="input-icon" />
+                        <input 
+                            type="text" 
+                            placeholder="Username" 
+                            value={uname} 
+                            onChange={setUname} 
+                            required
+                        />
+                    </div>
+                    
+                    <div className="input-group">
+                        <FaLock className="input-icon" />
+                        <input 
+                            type="password" 
+                            placeholder="Password" 
+                            value={pssd} 
+                            onChange={setPass} 
+                            required
+                        />
+                    </div>
+                    
+                    {output && <p className="error-message">{output}</p>}
+                    
+                    <button type="submit" className="submit-button">
+                        <FaSignInAlt /> Login
+                    </button>
                 </form>
             </div>
 
             <div className="footer">
-                <p>Don't have an account? Click <button className="button-4" onClick={register1}> here </button> to Register!</p>
-                {/* <button type="button" onClick={clicked}>GO to test</button> */}
+                <p>
+                    Don't have an account? 
+                    <button className="register-button" onClick={register1}>
+                        <FaUserPlus /> Register
+                    </button>
+                </p>
             </div>
-
         </div>
     );
 }
